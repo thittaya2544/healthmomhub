@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คู่มือแม่และเด็ก - โรงพยาบาลส่งเสริมสุขภาพตำบลคลองจระเข้</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #fdf2f8 0%, #f0f9ff 25%, #fef3e2 50%, #f0fdf4 75%, #faf5ff 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        .floating-delayed {
+            animation: floating 3s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        
+        .floating-delayed-2 {
+            animation: floating 3s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(236, 72, 153, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(236, 72, 153, 0.6); }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 1s ease-out;
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 1s ease-out;
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hospital-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
+        }
+        
+        .button-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .button-hover:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Cover Page -->
+    <div id="coverPage" class="min-h-screen flex flex-col hospital-pattern">
+        <!-- Header with Hospital Logo -->
+        <header class="bg-white/95 backdrop-blur-sm shadow-lg">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-center space-x-4">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-300 to-green-300 rounded-full flex items-center justify-center pulse-glow">
+                        <span class="text-3xl">🏥</span>
+                    </div>
+                    <div class="text-center">
+                        <h1 class="text-2xl font-bold text-gray-800 text-shadow">โรงพยาบาลส่งเสริมสุขภาพตำบล</h1>
+                        <h2 class="text-xl font-semibold text-blue-600">คลองจระเข้</h2>
+                        <p class="text-sm text-gray-600">Health Promoting Hospital Khlong Chorakhe</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Cover Content -->
+        <div class="flex-1 flex items-center justify-center px-6 py-12">
+            <div class="max-w-6xl mx-auto">
+                <!-- Title Section -->
+                <div class="text-center mb-16 fade-in-up">
+                    <div class="mb-8">
+                        <div class="flex justify-center items-center space-x-6 mb-6">
+                            <div class="floating">
+                                <span class="text-8xl">🤱</span>
+                            </div>
+                            <div class="floating-delayed">
+                                <span class="text-8xl">👶</span>
+                            </div>
+                            <div class="floating-delayed-2">
+                                <span class="text-8xl">❤️</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h1 class="text-6xl font-bold text-gray-800 mb-4 text-shadow">
+                        คู่มือแม่และเด็ก
+                    </h1>
+                    <h2 class="text-3xl font-semibold text-pink-600 mb-6">
+                        Mother & Child Care Guide
+                    </h2>
+                    <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-12">
+                        คำแนะนำครบครันสำหรับการดูแลสุขภาพแม่และเด็ก<br>
+                        เลือกหมวดหมู่ที่เหมาะสมกับคุณ
+                    </p>
+                </div>
+
+                <!-- Main Action Buttons -->
+                <div class="grid md:grid-cols-3 gap-6 mb-16 max-w-6xl mx-auto">
+                    <!-- Pregnancy Button -->
+                    <div class="slide-in-left">
+                        <a href="https://sites.google.com/view/savemomsavebaby/%E0%B8%AB%E0%B8%8D%E0%B8%87%E0%B8%95%E0%B8%87%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%A0?authuser=0" target="_blank" class="button-hover w-full bg-gradient-to-br from-pink-200 via-pink-300 to-rose-300 hover:from-pink-300 hover:via-pink-400 hover:to-rose-400 text-gray-700 rounded-3xl p-10 shadow-2xl border-4 border-white/50 block">
+                            <div class="text-center">
+                                <div class="text-6xl mb-4 floating">🤰</div>
+                                <h3 class="text-3xl font-bold mb-3">หญิงตั้งครรภ์</h3>
+                                <p class="text-lg mb-4 opacity-90">Pregnancy Care</p>
+                                <div class="space-y-2 text-base">
+                                    <div class="flex items-center justify-center space-x-2">
+                                        <span>✓</span>
+                                        <span>การตรวจครรภ์และดูแลสุขภาพ</span>
+                                    </div>
+                                    <div class="flex items-center justify-center space-x-2">
+                                        <span>✓</span>
+                                        <span>โภชนาการและการออกกำลังกาย</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4 text-sm opacity-80">
+                                    🔗 ไปยังเว็บไซต์หญิงตั้งครรภ์
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Postpartum Button -->
+                    <div class="slide-in-right">
+                        <a href="https://sites.google.com/view/savemomsavebaby/%E0%B8%AB%E0%B8%8D%E0%B8%87%E0%B8%AB%E0%B8%A5%E0%B8%87%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%94?authuser=0" target="_blank" class="button-hover w-full bg-gradient-to-br from-blue-200 via-blue-300 to-cyan-300 hover:from-blue-300 hover:via-blue-400 hover:to-cyan-400 text-gray-700 rounded-3xl p-10 shadow-2xl border-4 border-white/50 block">
+                            <div class="text-center">
+                                <div class="text-6xl mb-4 floating-delayed">🤱</div>
+                                <h3 class="text-3xl font-bold mb-3">หญิงหลังคลอด</h3>
+                                <p class="text-lg mb-4 opacity-90">Postpartum Care</p>
+                                <div class="space-y-2 text-base">
+                                    <div class="flex items-center justify-center space-x-2">
+                                        <span>✓</span>
+                                        <span>การฟื้นฟูร่างกายหลังคลอด</span>
+                                    </div>
+                                    <div class="flex items-center justify-center space-x-2">
+                                        <span>✓</span>
+                                        <span>การให้นมมารดา</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4 text-sm opacity-80">
+                                    🔗 ไปยังเว็บไซต์การดูแลหญิงหลังคลอด
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Baby Care Button -->
+                    <div class="fade-in-up" style="animation-delay: 0.4s;">
+                        <a href="https://sites.google.com/view/savemomsavebaby/%E0%B9%80%E0%B8%94%E0%B8%81%E0%B8%97%E0%B8%B2%E0%B8%A3%E0%B8%81" class="button-hover w-full bg-gradient-to-br from-green-200 via-emerald-300 to-teal-300 hover:from-green-300 hover:via-emerald-400 hover:to-teal-400 text-gray-700 rounded-3xl p-10 shadow-2xl border-4 border-white/50 block">
+                            <div class="text-center">
+                                <div class="text-6xl mb-4 floating-delayed-2">👶</div>
+                                <h3 class="text-3xl font-bold mb-3">เด็กทารก</h3>
+                                <p class="text-lg mb-4 opacity-90">Baby Care</p>
+                                <div class="space-y-2 text-base">
+                                    <div class="flex items-center justify-center space-x-2">
+                                        <span>✓</span>
+                                        <span>การดูแลเด็กแรกเกิด</span>
+                                    </div>
+                                    <div class="flex items-center justify-center space-x-2">
+                                        <span>✓</span>
+                                        <span>การเจริญเติบโต</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4 text-sm opacity-80">
+                                    🔗 ไปยังเว็บไซต์กาดูแลเด็กทารก
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Additional Info Cards -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <!-- Emergency Contact -->
+                    <div class="card-hover bg-red-50/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-red-200 fade-in-up">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-r from-red-200 to-pink-200 rounded-full flex items-center justify-center mx-auto mb-4 floating">
+                                <span class="text-3xl">🚨</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">ติดต่อฉุกเฉิน</h3>
+                            <p class="text-gray-600 mb-3">Emergency Contact</p>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex items-center justify-center space-x-2">
+                                    <span class="text-red-500">📞</span>
+                                    <span class="font-semibold">1669</span>
+                                </div>
+                                <div class="flex items-center justify-center space-x-2">
+                                    <span class="text-blue-500">🏥</span>
+                                    <span>0XX-XXX-XXXX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Hours -->
+                    <div class="card-hover bg-blue-50/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-blue-200 fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-full flex items-center justify-center mx-auto mb-4 floating-delayed">
+                                <span class="text-3xl">⏰</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">เวลาให้บริการ</h3>
+                            <p class="text-gray-600 mb-3">Service Hours</p>
+                            <div class="space-y-1 text-sm">
+                                <div>จันทร์ - ศุกร์</div>
+                                <div class="font-semibold text-blue-600">08:00 - 16:30</div>
+                                <div class="text-xs text-gray-500 mt-2">
+                                    ฉุกเฉิน 24 ชั่วโมง
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="card-hover bg-green-50/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-green-200 fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-r from-green-200 to-emerald-200 rounded-full flex items-center justify-center mx-auto mb-4 floating-delayed-2">
+                                <span class="text-3xl">📍</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">ที่ตั้ง</h3>
+                            <p class="text-gray-600 mb-3">Location</p>
+                            <div class="text-sm">
+                                <div>ตำบลคลองจระเข้</div>
+                                <div>อำเภอ... จังหวัด...</div>
+                                <div class="text-xs text-gray-500 mt-2">
+                                    Google Maps
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-white/95 backdrop-blur-sm py-6">
+            <div class="container mx-auto px-6 text-center">
+                <div class="flex items-center justify-center space-x-4 mb-3">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-300 to-green-300 rounded-full flex items-center justify-center">
+                        <span class="text-lg">🏥</span>
+                    </div>
+                    <span class="text-gray-700 font-semibold">โรงพยาบาลส่งเสริมสุขภาพตำบลคลองจระเข้</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-2">Health Promoting Hospital Khlong Chorakhe</p>
+                <p class="text-xs text-gray-500">© 2024 คู่มือแม่และเด็ก - ข้อมูลเพื่อการศึกษา ควรปรึกษาแพทย์ผู้เชี่ยวชาญ</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Main Content (Hidden initially) -->
+    <div id="mainContent" class="hidden min-h-screen">
+        <!-- Header -->
+        <header class="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center floating">
+                            <span class="text-2xl">🏥</span>
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-800">คู่มือแม่และเด็ก</h1>
+                            <p class="text-sm text-gray-600">โรงพยาบาลส่งเสริมสุขภาพตำบลคลองจระเข้</p>
+                        </div>
+                    </div>
+                    <button onclick="goHome()" class="bg-gradient-to-r from-pink-400 to-purple-400 text-white px-6 py-2 rounded-full hover:from-pink-500 hover:to-purple-500 transition-all">
+                        หน้าปก
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="container mx-auto px-6 py-8">
+            <!-- Pregnancy Content -->
+            <div id="pregnancyContent" class="hidden">
+                <div class="text-center py-20">
+                    <div class="text-8xl mb-6 floating">🤰</div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">การดูแลระยะตั้งครรภ์</h2>
+                    <p class="text-xl text-gray-600 mb-8">คำแนะนำสำหรับหญิงตั้งครรภ์</p>
+                    
+                    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                        <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+                            <h3 class="text-2xl font-bold text-pink-600 mb-4">การตรวจครรภ์</h3>
+                            <ul class="space-y-3 text-left">
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>ตรวจครรภ์ทุก 4 สัปดาห์ (เดือน 1-6)</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>ตรวจครรภ์ทุก 2 สัปดาห์ (เดือน 7-8)</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>ตรวจครรภ์ทุกสัปดาห์ (เดือน 9)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+                            <h3 class="text-2xl font-bold text-pink-600 mb-4">โภชนาการ</h3>
+                            <ul class="space-y-3 text-left">
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>รับประทานอาหารครบ 5 หมู่</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>ดื่มนมและรับประทานแคลเซียม</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>รับประทานกรดโฟลิก</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Postpartum Content -->
+            <div id="postpartumContent" class="hidden">
+                <div class="text-center py-20">
+                    <div class="text-8xl mb-6 floating">🤱</div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">การดูแลหลังคลอด</h2>
+                    <p class="text-xl text-gray-600 mb-8">คำแนะนำสำหรับหญิงหลังคลอด</p>
+                    
+                    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                        <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+                            <h3 class="text-2xl font-bold text-blue-600 mb-4">การให้นมมารดา</h3>
+                            <ul class="space-y-3 text-left">
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>ให้นมมารดาเท่านั้น 6 เดือนแรก</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>ให้นมทุก 2-3 ชั่วโมง</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>ดูแลหัวนมให้สะอาด</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+                            <h3 class="text-2xl font-bold text-blue-600 mb-4">การฟื้นฟูร่างกาย</h3>
+                            <ul class="space-y-3 text-left">
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>พักผ่อนให้เพียงพอ</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>รับประทานอาหารที่มีประโยชน์</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>ออกกำลังกายเบาๆ</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Baby Care Content -->
+            <div id="babyContent" class="hidden">
+                <div class="text-center py-20">
+                    <div class="text-8xl mb-6 floating">👶</div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">การดูแลเด็กทารก</h2>
+                    <p class="text-xl text-gray-600 mb-8">คำแนะนำสำหรับการดูแลเด็กแรกเกิด</p>
+                    
+                    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                        <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+                            <h3 class="text-2xl font-bold text-green-600 mb-4">การดูแลเด็กแรกเกิด</h3>
+                            <ul class="space-y-3 text-left">
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>การอาบน้ำและทำความสะอาด</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>การเปลี่ยนผ้าอ้อม</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>การดูแลสายสะดือ</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+                            <h3 class="text-2xl font-bold text-green-600 mb-4">การเจริญเติบโต</h3>
+                            <ul class="space-y-3 text-left">
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>ตารางการเจริญเติบโต</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>การฉีดวัคซีนตามกำหนด</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span>พัฒนาการในแต่ละช่วงอายุ</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentContent = null;
+
+        function enterContent(type) {
+            document.getElementById('coverPage').classList.add('hidden');
+            document.getElementById('mainContent').classList.remove('hidden');
+            
+            // Hide all content first
+            document.getElementById('pregnancyContent').classList.add('hidden');
+            document.getElementById('postpartumContent').classList.add('hidden');
+            document.getElementById('babyContent').classList.add('hidden');
+            
+            // Show selected content
+            if (type === 'pregnancy') {
+                document.getElementById('pregnancyContent').classList.remove('hidden');
+                currentContent = 'pregnancy';
+            } else if (type === 'postpartum') {
+                document.getElementById('postpartumContent').classList.remove('hidden');
+                currentContent = 'postpartum';
+            } else if (type === 'baby') {
+                document.getElementById('babyContent').classList.remove('hidden');
+                currentContent = 'baby';
+            }
+        }
+
+        function goHome() {
+            document.getElementById('mainContent').classList.add('hidden');
+            document.getElementById('coverPage').classList.remove('hidden');
+            currentContent = null;
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('coverPage').classList.remove('hidden');
+            document.getElementById('mainContent').classList.add('hidden');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96293d696102731c',t:'MTc1MzA4NTYxNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
